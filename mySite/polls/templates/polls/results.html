@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Start of the style section -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 20px;
+            text-align: left;
+        }
+
+        h1 {
+            color: #333;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        ul {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        li {
+            margin: 10px 0;
+            font-size: 16px;
+        }
+
+        a.button {
+            text-decoration: none;
+            color: #fff;
+            background-color: #007bff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+
+        a.button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <!-- End of the style section -->
+
+</head>
+<body>
+    <h1>{{ question.question_text }}</h1>
+
+    <ul>
+        {% for choice in question.choice_set.all %} <!-- For loop to display choice amounts. -->
+        <li>
+            {{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}
+        </li>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'polls:detail' question.id %}" class="button"> <!-- Link back to questions if user clicks vote again. -->
+        Vote again?
+    </a>
+</body>
+</html>

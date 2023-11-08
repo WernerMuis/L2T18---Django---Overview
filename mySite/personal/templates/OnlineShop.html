@@ -1,0 +1,254 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AddnPay</title>
+
+    <!-- Start of the style section -->
+    <style>
+        /* Reset default margin and padding for the body */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f3eeee;
+        }
+
+        /* Create a flex container for centering */
+        .center-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 50px;
+        }
+
+        /* Style for the grid system */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        /* Style for individual product items */
+        .product-item {
+            text-align: center;
+            border: 1px solid #ccc;
+            padding: 10px;
+            transition: transform 0.2s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #d5dddf;
+        }
+
+        /* Style for product item hover */
+        .product-item:hover {
+            transform: scale(1.02);
+        }
+
+        /* Style for product images */
+        .product-image {
+            max-width: 50%;
+            height: 50%;
+        }
+
+        /* Style for the header */
+        .header {
+            background-color: #3da0c7;
+            padding: 20px;
+            width: 98%;
+            text-align: center;
+            padding: 0 10px;
+        }
+
+        /* Style for the footer */
+        .footer {
+            background-color: #3da0c7;
+            color: #fff;
+            padding: 20px;
+            width: 98%;
+            text-align: center;
+            padding: 0 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Style for the contact form */
+        .contact-form {
+            display: flex;
+            align-items: center;
+        }
+
+        /* Style for the company logo */
+        .company-logo {
+            max-width: 150px;
+            margin-right: 20px;
+        }
+
+        /* Style for the form group */
+        .form-group {
+            display: flex;
+            align-items: center;
+        }
+
+        /* Style for the form group label */
+        .form-group label {
+            flex: 1;
+            text-align: right;
+            padding-right: 10px;
+        }
+
+        /* Style for the form group input */
+        .form-group input {
+            flex: 2;
+            padding: 10px;
+            border: none;
+            background-color: #bde2eb;
+        }
+
+        /* Style for the form input */
+        .form-input {
+            flex: 2;
+            padding: 10px;
+            border: none;
+            background-color: #bde2eb;
+        }
+    </style>
+    <!-- End of the style section -->
+
+</head>
+
+<body>
+
+    <!--Start of the header section -->
+    <div class="header">
+        <form class="contact-form">
+            <img class="company-logo" src="{% static 'images/Logo.png' %}" alt="AddnPay">
+            <input class="form-input" type="text" placeholder="Search">
+            <button>Search</button>
+        </form>
+    </div>
+    <!--End of the header section -->
+
+    <div class="center-container">
+        <div class="product-grid">
+
+            <!-- Product 1 -->
+            <div class="product-item">
+                <img class="product-image" src="{% static 'images/Images/Product1_Earmuffs.png' %}" alt="Black Replacement Ear Pads Cushions">
+                <h3>Black Replacement Ear Pads Cushions</h3>
+                <p>R159</p>
+                <button>Buy</button>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-item">
+                <img class="product-image" src="{% static 'images/Images/Product2_DualArmAdjustableMonitorDeskMountStand.png' %}" alt="Dual Arm Adjustable Monitor Desk Mount Stand">
+                <h3>Dual Arm Adjustable Monitor Desk Mount Stand</h3>
+                <p>R 999</p>
+                <button>Buy</button>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-item">
+                <img class="product-image" src="{% static 'images/Images/Product3_SamsungGalaxyS23Ultra5G256GB.png' %}" alt="Samsung Galaxy S23 Ultra 5G 256GB">
+                <h3>Samsung Galaxy S23 Ultra 5G 256GB</h3>
+                <p>R 29,499</p>
+                <button>Buy</button>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-item">
+                <img class="product-image" src="{% static 'images/Images/Product4_SamsungGalaxyS235G256GB.png' %}" alt="Samsung Galaxy S23 5G 256GB">
+                <h3>Samsung Galaxy S23 5G 256GB</h3>
+                <p>R 19,999</p>
+                <button>Buy</button>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="product-item">
+                <img class="product-image" src="{% static 'images/Images/Product5_AppleWatchSEGPSSportBand.png' %}" alt="Apple Watch SE GPS Sport Band">
+                <h3>Apple Watch SE GPS Sport Band</h3>
+                <p>R 5,999</p>
+                <button>Buy</button>
+            </div>
+
+            <!-- Product 6 -->
+            <div class="product-item">
+                <img class="product-image" src="{% static 'images/Images/Product6_Homestar40cmMistFanWithTimer.png' %}" alt="Homestar 40cm Mist Fan With Timer">
+                <h3>Homestar 40cm Mist Fan With Timer</h3>
+                <p>R 1,299</p>
+                <button>Buy</button>
+            </div>
+
+            <!-- Product 7 -->
+            <div class="product-item">
+                <img class="product-image" src="{% static 'images/Images/Product7_Hisense55InE7H4K SmartUHDQLEDTV.png' %}" alt="Hisense 55In E7H4K Smart UHD QLED TV">
+                <h3>Hisense 55In E7H4K Smart UHD QLED TV</h3>
+                <p>R 6,999</p>
+                <button>Buy</button>
+            </div>
+
+            <!-- Product 8 -->
+            <div class="product-item">
+                <img class="product-image" src="{% static 'images/Images/Product8_GarminVivoactive4Smartwatch.png' %}" alt="Garmin Vivoactive 4 Smartwatch">
+                <h3>Garmin Vivoactive 4 Smartwatch</h3>
+                <p>R 3,999</p>
+                <button>Buy</button>
+            </div>
+
+            <!-- Product 9 -->
+            <div class="product-item">
+                <img class="product-image" src="{% static 'images/Images/Product9_GarminForerunner55Smartwatch.png' %}" alt="Garmin Forerunner 55 Smartwatch">
+                <h3>Garmin Forerunner 55 Smartwatch</h3>
+                <p>R 3,499</p>
+                <button>Buy</button>
+            </div>
+
+            <!-- Product 10 -->
+            <div class="product-item">
+                <img class="product-image" src="{% static 'images/Images/Product10_HuaweiNovaY6164GB.png' %}" alt="Huawei Nova Y61 64GB">
+                <h3>Huawei Nova Y61 64GB</h3>
+                <p>R 3,499</p>
+                <button>Buy</button>
+            </div>
+        </div>
+    </div>
+
+    <!--Start of the footer section -->
+    <div class="footer">
+        <img class="company-logo" src="{% static 'images/Logo.png' %}" alt="AddnPay">
+        <form class="form-horizontal" action="/action_page.php">
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+                <label for="pwd">Password:</label>
+                <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-sm-10">
+                    <div class="checkbox">
+                        <label><input type="checkbox"> Remember me</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <!--End of the footer section -->
+
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Start of the style section -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #333;
+            background-color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        ul {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        li {
+            margin: 10px 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        p {
+            color: #777;
+        }
+    </style>
+    <!-- End of the style section -->
+
+</head>
+<body>
+    <h1>Questions</h1>
+    {% if latest_question_list %}
+    <ul>
+        {% if not user.is_authenticated %}
+            <p><strong>You must <a href="{% url 'user_auth:login' %}">log in</a> before you can vote.</strong></p> <!-- Link to login page. -->
+        {% endif %}
+        {% for question in latest_question_list %}
+        <li>
+            <a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a> <!-- List of questions. -->
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>No polls are available.</p>
+    {% endif %}
+</body>
+</html>

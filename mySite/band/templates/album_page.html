@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Albums</title>
+
+    <!-- Start of Style section. -->
+    <style>
+        body {
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            color: #568c9c;
+        }
+        .navbar {
+            display: flex;
+            justify-content: flex-end;
+            padding: 10px;
+        }
+        .navbar a {
+            margin-right: 10px;
+            text-decoration: none;
+            color: #1d728a;
+        }
+        .logged_In_container {
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            padding: 20px;
+            width: 450px; 
+            margin: 100px auto;
+        }
+        h1 {
+            font-size: 24px;
+        }
+        ul {
+            list-style-type: disc; 
+            text-align: left; 
+        }
+        li {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        a {
+            text-decoration: none;
+            color: #1d728a;
+            display: block;
+            margin-top: 10px;
+        }
+        a:hover {
+            color: #40a9ff;
+        }
+        form {
+            margin-top: 10px;
+        }
+        button[type="submit"] {
+            background-color: #61dafb;
+            color: #282c34;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button[type="submit"]:hover {
+            background-color: #40a9ff;
+        }
+    </style>
+    <!-- End of Style section. -->
+
+</head>
+<body>
+    <div class="navbar">
+        <a href="{% url 'register' %}">Register</a> <!-- Link to register page. -->
+        <a href="{% url 'contact' %}">Contact Us</a> <!-- Link to Contact Us page. -->
+    </div>
+    <div class="logged_In_container">
+        <h1>Albums by The Django Guys</h1>
+        <ul>
+            {% for album in albums %} <!-- For loop to display the albums on the database. -->
+                <li>{{ album.title }}</li>
+            {% endfor %}
+        </ul>
+        <a href="{% url 'live_shows_page' %}">Live Shows</a> <!-- Link to the Live shows page. -->
+        <a href="{% url 'landing_page' %}">Home</a> <!-- Link back to the home page. -->
+        <form action="{% url 'logout' %}" method="post"> <!-- Log Out button to log out. -->
+            {% csrf_token %}
+            <button type="submit">Log Out</button>
+        </form>
+    </div>
+</body>
+</html>

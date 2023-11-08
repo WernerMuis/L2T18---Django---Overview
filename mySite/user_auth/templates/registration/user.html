@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Welcome, {{ username }}</title>
+
+    <!-- Start of the style section -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            max-width: 450px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+            word-wrap: break-word;
+        }
+
+        .btn {
+            background-color: #0074D9;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            text-align: center;
+            text-decoration: none;
+            display: block;
+            font-size: 16px;
+            margin: 10px auto;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .btn:hover {
+            background-color: #0056B3;
+        }
+
+        .btn:active {
+            background-color: #003C79;
+        }
+    </style>
+    <!-- End of the style section -->
+
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome, {{ username }}</h1>
+
+        <p>Your password is {{ password }}</p>
+
+        <a href="{% url 'polls:index' %}" class="btn">Back to Voting</a> <!-- link back to poll.html -->
+    </div>
+</body>
+</html>
