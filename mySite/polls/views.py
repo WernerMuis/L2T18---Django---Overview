@@ -5,28 +5,63 @@ from .models import Question, Choice
 from django.contrib.auth.decorators import login_required
 
 
-# Function to display the questions.
 def index(request):
+    """
+    Renders a view to display a list of the latest questions.
+
+    Args:
+        request: The HTTP request object.
+
+    Returns:
+        A rendered HTML page displaying the latest questions.
+    """
     latest_question_list = Question.objects.order_by('-pub_date')[:5]
     context = {'latest_question_list': latest_question_list}
     return render(request, 'polls/poll.html', context)
 
 
-# Function for question detail.
 @login_required(login_url="/user_auth/login/")
 def detail(request, question_id):
+    """
+    Renders a view to display the details of a specific question.
+
+    Args:
+        request: The HTTP request object.
+        question_id: The ID of the question to display.
+
+    Returns:
+        A rendered HTML page displaying the question details.
+    """
     question = get_object_or_404(Question, pk=question_id)
     return render(request, 'polls/detail.html', {'question': question})
 
 
-# Function for voting results.
 def results(request, question_id):
+    """
+    Renders a view to display the results of a specific question.
+
+    Args:
+        request: The HTTP request object.
+        question_id: The ID of the question to display results for.
+
+    Returns:
+        A rendered HTML page displaying the question results.
+    """
     question = get_object_or_404(Question, pk=question_id)
     return render(request, 'polls/results.html', {'question': question})
 
 
-# Function for the vote that happens.
 def vote(request, question_id):
+    """
+    Handles user voting on a specific question by updating the vote count.
+
+    Args:
+        request: The HTTP request object.
+        question_id: The ID of the question being voted on.
+
+    Returns:
+        An HTTP redirect to the results page for the voted question.
+    """
     question = get_object_or_404(Question, pk=question_id)
     try:
         selected_choice = question.choice_set.get(
