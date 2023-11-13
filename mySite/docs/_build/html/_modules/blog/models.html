@@ -75,6 +75,21 @@
 <div class="viewcode-block" id="Post">
 <a class="viewcode-back" href="../../blog.html#blog.models.Post">[docs]</a>
 <span class="k">class</span> <span class="nc">Post</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Model representing a post in the database.</span>
+
+<span class="sd">    :param models.Model: The base class for all Django database models.</span>
+<span class="sd">    :type models.Model: class</span>
+<span class="sd">    :ivar title: The title of the post.</span>
+<span class="sd">    :vartype title: CharField</span>
+<span class="sd">    :ivar body: The body content of the post.</span>
+<span class="sd">    :vartype body: TextField</span>
+<span class="sd">    :ivar signature: The signature associated with the post, default is &quot;Werner Miller&quot;.</span>
+<span class="sd">    :vartype signature: CharField</span>
+<span class="sd">    :ivar date: The date and time when the post was created.</span>
+<span class="sd">    :vartype date: DateTimeField</span>
+<span class="sd">    :return: A string representation of the post.</span>
+<span class="sd">    :rtype: str</span>
+<span class="sd">    &quot;&quot;&quot;</span>    
     <span class="n">title</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">140</span><span class="p">)</span>
     <span class="n">body</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">()</span>
     <span class="n">signature</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">140</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span> <span class="s2">&quot;Werner Miller&quot;</span><span class="p">)</span>
