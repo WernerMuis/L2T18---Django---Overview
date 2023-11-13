@@ -129,6 +129,18 @@
 <dt class="sig sig-object py" id="personal.apps.PersonalConfig">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">personal.apps.</span></span><span class="sig-name descname"><span class="pre">PersonalConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_module</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/personal/apps.html#PersonalConfig"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#personal.apps.PersonalConfig" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">AppConfig</span></code></p>
+<p>Configuration class for the ‘personal’ app.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>AppConfig</strong> (<em>class</em>) – The base class for Django application configurations.</p>
+</dd>
+<dt class="field-even">Variables<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>default_auto_field</strong> (<em>str</em>) – The default auto field to use for models.</p></li>
+<li><p><strong>name</strong> (<em>str</em>) – The name of the app.</p></li>
+</ul>
+</dd>
+</dl>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="personal.apps.PersonalConfig.default_auto_field">
 <span class="sig-name descname"><span class="pre">default_auto_field</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'django.db.models.BigAutoField'</span></em><a class="headerlink" href="#personal.apps.PersonalConfig.default_auto_field" title="Link to this definition"></a></dt>
@@ -159,17 +171,53 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="personal.views.contact">
 <span class="sig-prename descclassname"><span class="pre">personal.views.</span></span><span class="sig-name descname"><span class="pre">contact</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/personal/views.html#contact"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#personal.views.contact" title="Link to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>Render the Contact Us page.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>request</strong> (<em>HttpRequest</em>) – The HTTP request.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Rendered HTML response for the Contact Us page.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>HttpResponse</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="personal.views.index">
 <span class="sig-prename descclassname"><span class="pre">personal.views.</span></span><span class="sig-name descname"><span class="pre">index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/personal/views.html#index"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#personal.views.index" title="Link to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>Render the index page.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>request</strong> (<em>HttpRequest</em>) – The HTTP request.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Rendered HTML response for the index page.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>HttpResponse</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="personal.views.shop">
 <span class="sig-prename descclassname"><span class="pre">personal.views.</span></span><span class="sig-name descname"><span class="pre">shop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/personal/views.html#shop"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#personal.views.shop" title="Link to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>Render the Online Shop page.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>request</strong> (<em>HttpRequest</em>) – The HTTP request.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Rendered HTML response for the Online Shop page.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>HttpResponse</p>
+</dd>
+</dl>
+</dd></dl>
 
 </section>
 <section id="module-personal">
