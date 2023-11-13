@@ -74,6 +74,17 @@
 <div class="viewcode-block" id="Question">
 <a class="viewcode-back" href="../../polls.html#polls.models.Question">[docs]</a>
 <span class="k">class</span> <span class="nc">Question</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Model representing a question in the database.</span>
+
+<span class="sd">    :param models.Model: The base class for all Django database models.</span>
+<span class="sd">    :type models.Model: class</span>
+<span class="sd">    :ivar question_text: The text of the question.</span>
+<span class="sd">    :vartype question_text: CharField</span>
+<span class="sd">    :ivar pub_date: The date and time when the question was published.</span>
+<span class="sd">    :vartype pub_date: DateTimeField</span>
+<span class="sd">    :return: A string representation of the question.</span>
+<span class="sd">    :rtype: str</span>
+<span class="sd">    &quot;&quot;&quot;</span>    
     <span class="n">question_text</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
     <span class="n">pub_date</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="s1">&#39;date published&#39;</span><span class="p">)</span>
 
@@ -84,6 +95,19 @@
 <div class="viewcode-block" id="Choice">
 <a class="viewcode-back" href="../../polls.html#polls.models.Choice">[docs]</a>
 <span class="k">class</span> <span class="nc">Choice</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Model representing a choice for a question in the database.</span>
+
+<span class="sd">    :param models.Model: The base class for all Django database models.</span>
+<span class="sd">    :type models.Model: class</span>
+<span class="sd">    :ivar question: The associated question for the choice.</span>
+<span class="sd">    :vartype question: ForeignKey</span>
+<span class="sd">    :ivar choice_text: The text of the choice.</span>
+<span class="sd">    :vartype choice_text: CharField</span>
+<span class="sd">    :ivar votes: The number of votes for the choice, default is 0.</span>
+<span class="sd">    :vartype votes: IntegerField</span>
+<span class="sd">    :return: A string representation of the choice.</span>
+<span class="sd">    :rtype: str</span>
+<span class="sd">    &quot;&quot;&quot;</span>    
     <span class="n">question</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">Question</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">CASCADE</span><span class="p">)</span>
     <span class="n">choice_text</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
     <span class="n">votes</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">IntegerField</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
