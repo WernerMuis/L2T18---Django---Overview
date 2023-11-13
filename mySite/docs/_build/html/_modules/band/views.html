@@ -75,15 +75,17 @@
 <span class="kn">from</span> <span class="nn">.models</span> <span class="kn">import</span> <span class="n">Album</span><span class="p">,</span> <span class="n">LiveShow</span>
 
 
-<span class="c1"># Function for the landing page.</span>
-<span class="c1">#def landing_page(request):</span>
-<span class="c1">#    return render(request, &#39;landing_page.html&#39;)</span>
-
-
 <span class="c1"># Function for the album page.</span>
 <div class="viewcode-block" id="album_page">
 <a class="viewcode-back" href="../../band.html#band.views.album_page">[docs]</a>
 <span class="k">def</span> <span class="nf">album_page</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Render the album page.</span>
+
+<span class="sd">    :param request: The HTTP request.</span>
+<span class="sd">    :type request: HttpRequest</span>
+<span class="sd">    :return: Rendered HTML response for the album page.</span>
+<span class="sd">    :rtype: HttpResponse</span>
+<span class="sd">    &quot;&quot;&quot;</span>    
     <span class="n">albums</span> <span class="o">=</span> <span class="n">Album</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
     <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s1">&#39;album_page.html&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;albums&#39;</span><span class="p">:</span> <span class="n">albums</span><span class="p">})</span></div>
 
@@ -93,6 +95,13 @@
 <div class="viewcode-block" id="live_shows_page">
 <a class="viewcode-back" href="../../band.html#band.views.live_shows_page">[docs]</a>
 <span class="k">def</span> <span class="nf">live_shows_page</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Render the live shows page.</span>
+
+<span class="sd">    :param request: The HTTP request.</span>
+<span class="sd">    :type request: HttpRequest</span>
+<span class="sd">    :return: Rendered HTML response for the live shows page.</span>
+<span class="sd">    :rtype: HttpResponse</span>
+<span class="sd">    &quot;&quot;&quot;</span>    
     <span class="n">live_shows</span> <span class="o">=</span> <span class="n">LiveShow</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
     <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s1">&#39;live_shows_page.html&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;live_shows&#39;</span><span class="p">:</span> <span class="n">live_shows</span><span class="p">})</span></div>
 
@@ -102,6 +111,16 @@
 <div class="viewcode-block" id="landing_page">
 <a class="viewcode-back" href="../../band.html#band.views.landing_page">[docs]</a>
 <span class="k">def</span> <span class="nf">landing_page</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Render the landing page.</span>
+
+<span class="sd">    If the request method is POST, attempt to authenticate the user.</span>
+<span class="sd">    If authentication is successful, log in the user and redirect to the landing page.</span>
+
+<span class="sd">    :param request: The HTTP request.</span>
+<span class="sd">    :type request: HttpRequest</span>
+<span class="sd">    :return: Rendered HTML response for the landing page.</span>
+<span class="sd">    :rtype: HttpResponse</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;POST&#39;</span><span class="p">:</span>
         <span class="n">username</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">POST</span><span class="p">[</span><span class="s1">&#39;username&#39;</span><span class="p">]</span>
         <span class="n">password</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">POST</span><span class="p">[</span><span class="s1">&#39;password&#39;</span><span class="p">]</span>
@@ -117,6 +136,16 @@
 <div class="viewcode-block" id="register">
 <a class="viewcode-back" href="../../band.html#band.views.register">[docs]</a>
 <span class="k">def</span> <span class="nf">register</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Handle user registration.</span>
+
+<span class="sd">    If the request method is POST, validate the registration form.</span>
+<span class="sd">    If the form is valid, create a new user, log in, and redirect to the landing page.</span>
+
+<span class="sd">    :param request: The HTTP request.</span>
+<span class="sd">    :type request: HttpRequest</span>
+<span class="sd">    :return: Rendered HTML response for the registration page.</span>
+<span class="sd">    :rtype: HttpResponse</span>
+<span class="sd">    &quot;&quot;&quot;</span>    
     <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;POST&#39;</span><span class="p">:</span>
         <span class="n">form</span> <span class="o">=</span> <span class="n">UserCreationForm</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">POST</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">form</span><span class="o">.</span><span class="n">is_valid</span><span class="p">():</span>
@@ -133,6 +162,13 @@
 <div class="viewcode-block" id="logout_view">
 <a class="viewcode-back" href="../../band.html#band.views.logout_view">[docs]</a>
 <span class="k">def</span> <span class="nf">logout_view</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Log out the user.</span>
+
+<span class="sd">    :param request: The HTTP request.</span>
+<span class="sd">    :type request: HttpRequest</span>
+<span class="sd">    :return: Redirect to the landing page after logging out.</span>
+<span class="sd">    :rtype: HttpResponse</span>
+<span class="sd">    &quot;&quot;&quot;</span>    
     <span class="n">logout</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="s1">&#39;landing_page&#39;</span><span class="p">)</span></div>
 
